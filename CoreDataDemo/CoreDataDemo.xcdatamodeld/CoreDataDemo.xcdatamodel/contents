@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="length" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -23,7 +24,7 @@
         <relationship name="course" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUser" inverseEntity="Course"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-45" positionY="63" width="128" height="119"/>
+        <element name="Course" positionX="-45" positionY="63" width="128" height="134"/>
         <element name="Person" positionX="-54" positionY="-9" width="128" height="74"/>
         <element name="User" positionX="-36" positionY="36" width="128" height="134"/>
     </elements>

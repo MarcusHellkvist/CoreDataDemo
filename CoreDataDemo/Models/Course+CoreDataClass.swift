@@ -2,7 +2,7 @@
 //  Course+CoreDataClass.swift
 //  CoreDataDemo
 //
-//  Created by Marcus Hellkvist on 2021-02-27.
+//  Created by Marcus Hellkvist on 2021-03-02.
 //
 //
 

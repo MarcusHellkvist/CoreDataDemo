@@ -2,7 +2,7 @@
 //  Course+CoreDataProperties.swift
 //  CoreDataDemo
 //
-//  Created by Marcus Hellkvist on 2021-02-27.
+//  Created by Marcus Hellkvist on 2021-03-02.
 //
 //
 
@@ -16,11 +16,12 @@ extension Course {
         return NSFetchRequest<Course>(entityName: "Course")
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var desc: String?
-    @NSManaged public var rating: Int64
     @NSManaged public var length: Int64
+    @NSManaged public var rating: Int64
     @NSManaged public var teacher: String?
+    @NSManaged public var title: String?
+    @NSManaged public var category: Int64
     @NSManaged public var ofUser: User?
 
 }

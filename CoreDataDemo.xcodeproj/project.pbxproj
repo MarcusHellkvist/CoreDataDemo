@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0316C33525EAB99F00BBCBB3 /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316C33125EAB99F00BBCBB3 /* Course+CoreDataClass.swift */; };
-		0316C33625EAB99F00BBCBB3 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316C33225EAB99F00BBCBB3 /* Course+CoreDataProperties.swift */; };
-		0316C33725EAB99F00BBCBB3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316C33325EAB99F00BBCBB3 /* User+CoreDataClass.swift */; };
-		0316C33825EAB99F00BBCBB3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316C33425EAB99F00BBCBB3 /* User+CoreDataProperties.swift */; };
+		0302CB0E25EE73ED0042BEC5 /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0302CB0A25EE73ED0042BEC5 /* Course+CoreDataClass.swift */; };
+		0302CB0F25EE73ED0042BEC5 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0302CB0B25EE73ED0042BEC5 /* Course+CoreDataProperties.swift */; };
+		0302CB1025EE73ED0042BEC5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0302CB0C25EE73ED0042BEC5 /* User+CoreDataClass.swift */; };
+		0302CB1125EE73ED0042BEC5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0302CB0D25EE73ED0042BEC5 /* User+CoreDataProperties.swift */; };
 		03327F8225ED0263004034D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03327F8125ED0263004034D2 /* DataManager.swift */; };
 		03F98C5C25E7D8CE002BD3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F98C5B25E7D8CE002BD3A6 /* AppDelegate.swift */; };
 		03F98C5E25E7D8CE002BD3A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F98C5D25E7D8CE002BD3A6 /* SceneDelegate.swift */; };
@@ -36,10 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0316C33125EAB99F00BBCBB3 /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0316C33225EAB99F00BBCBB3 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0316C33325EAB99F00BBCBB3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0316C33425EAB99F00BBCBB3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0302CB0A25EE73ED0042BEC5 /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0302CB0B25EE73ED0042BEC5 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0302CB0C25EE73ED0042BEC5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0302CB0D25EE73ED0042BEC5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		03327F8125ED0263004034D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		03F98C5825E7D8CE002BD3A6 /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F98C5B25E7D8CE002BD3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,10 +117,10 @@
 		03F98C7825E7DA77002BD3A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0316C33125EAB99F00BBCBB3 /* Course+CoreDataClass.swift */,
-				0316C33225EAB99F00BBCBB3 /* Course+CoreDataProperties.swift */,
-				0316C33325EAB99F00BBCBB3 /* User+CoreDataClass.swift */,
-				0316C33425EAB99F00BBCBB3 /* User+CoreDataProperties.swift */,
+				0302CB0A25EE73ED0042BEC5 /* Course+CoreDataClass.swift */,
+				0302CB0B25EE73ED0042BEC5 /* Course+CoreDataProperties.swift */,
+				0302CB0C25EE73ED0042BEC5 /* User+CoreDataClass.swift */,
+				0302CB0D25EE73ED0042BEC5 /* User+CoreDataProperties.swift */,
 				03F98CCC25EA7B60002BD3A6 /* Person+CoreDataClass.swift */,
 				03F98CCD25EA7B60002BD3A6 /* Person+CoreDataProperties.swift */,
 				03F98C9925E80ACB002BD3A6 /* CourseModel.swift */,
@@ -230,28 +230,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0316C33525EAB99F00BBCBB3 /* Course+CoreDataClass.swift in Sources */,
-				0316C33625EAB99F00BBCBB3 /* Course+CoreDataProperties.swift in Sources */,
 				03F98C9D25E80AFB002BD3A6 /* CategoryModel.swift in Sources */,
 				03F98C7D25E7FFB4002BD3A6 /* LoginViewController.swift in Sources */,
 				03F98C6025E7D8CE002BD3A6 /* ViewController.swift in Sources */,
 				03F98C6625E7D8CE002BD3A6 /* CoreDataDemo.xcdatamodeld in Sources */,
 				03F98C8525E80187002BD3A6 /* UserDelegate.swift in Sources */,
 				03F98CB725EA7024002BD3A6 /* Service.swift in Sources */,
+				0302CB0F25EE73ED0042BEC5 /* Course+CoreDataProperties.swift in Sources */,
 				03F98CBA25EA73CF002BD3A6 /* CourseDelegate.swift in Sources */,
 				03F98CB025E8103E002BD3A6 /* CourseDetailsViewController.swift in Sources */,
 				03F98CB325E83212002BD3A6 /* ProfileViewController.swift in Sources */,
 				03F98CA125E80B69002BD3A6 /* CourseTableViewCell.swift in Sources */,
 				03F98C8125E7FFCE002BD3A6 /* RegisterViewController.swift in Sources */,
 				03F98CCF25EA7B60002BD3A6 /* Person+CoreDataProperties.swift in Sources */,
-				0316C33725EAB99F00BBCBB3 /* User+CoreDataClass.swift in Sources */,
+				0302CB0E25EE73ED0042BEC5 /* Course+CoreDataClass.swift in Sources */,
 				03F98C9A25E80ACB002BD3A6 /* CourseModel.swift in Sources */,
 				03F98CCE25EA7B60002BD3A6 /* Person+CoreDataClass.swift in Sources */,
-				0316C33825EAB99F00BBCBB3 /* User+CoreDataProperties.swift in Sources */,
 				03F98C5C25E7D8CE002BD3A6 /* AppDelegate.swift in Sources */,
 				03327F8225ED0263004034D2 /* DataManager.swift in Sources */,
+				0302CB1125EE73ED0042BEC5 /* User+CoreDataProperties.swift in Sources */,
 				03F98C5E25E7D8CE002BD3A6 /* SceneDelegate.swift in Sources */,
 				03F98CAD25E80CFE002BD3A6 /* CoursesViewController.swift in Sources */,
+				0302CB1025EE73ED0042BEC5 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

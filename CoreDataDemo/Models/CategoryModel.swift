@@ -9,5 +9,5 @@ import Foundation
 
 struct CategoryModel {
     var name: String
-    var courses: [Course]
+    var courses: [Course] = [Course]()
 }
