@@ -5,6 +5,7 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="length" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="teacher" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="course" inverseEntity="User"/>
@@ -24,7 +25,7 @@
         <relationship name="course" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUser" inverseEntity="Course"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-45" positionY="63" width="128" height="134"/>
+        <element name="Course" positionX="-45" positionY="63" width="128" height="149"/>
         <element name="Person" positionX="-54" positionY="-9" width="128" height="74"/>
         <element name="User" positionX="-36" positionY="36" width="128" height="134"/>
     </elements>

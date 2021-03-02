@@ -218,7 +218,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKI-L5-4Kl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKI-L5-4Kl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -242,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="899" y="775"/>
         </scene>
-        <!--Profile-->
+        <!--Wishlist-->
         <scene sceneID="a9T-Si-DHy">
             <objects>
                 <viewController id="91X-yO-Bhb" customClass="ProfileViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -253,10 +253,10 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iah-Oa-Qvm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Your Courses" id="uX3-tB-eAz"/>
+                                    <navigationItem title="Wishlist" id="uX3-tB-eAz"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-xZ-OV0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-xZ-OV0">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -273,7 +273,7 @@
                             <constraint firstItem="iah-Oa-Qvm" firstAttribute="trailing" secondItem="58r-Yn-N2o" secondAttribute="trailing" id="nnC-pN-WLZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="b49-em-EID"/>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="list.dash" catalog="system" id="b49-em-EID"/>
                     <connections>
                         <outlet property="navBar" destination="iah-Oa-Qvm" id="6YS-HZ-Ytg"/>
                         <outlet property="tableView" destination="JdA-xZ-OV0" id="dt0-jV-YgU"/>
@@ -282,6 +282,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xS1-4F-GQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1743" y="775"/>
+        </scene>
+        <!--Active Courses-->
+        <scene sceneID="JGT-YS-w6q">
+            <objects>
+                <viewController id="Lrd-mj-URE" customClass="ActiveCoursesViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lxT-Eh-eVe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-o8-9oU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Active Courses" id="lAb-aJ-GJ4"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-Cu-Zhy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Klg-tg-5Ph"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K4g-Cu-Zhy" firstAttribute="top" secondItem="1cq-o8-9oU" secondAttribute="bottom" id="3f1-O6-ZrB"/>
+                            <constraint firstItem="1cq-o8-9oU" firstAttribute="top" secondItem="Klg-tg-5Ph" secondAttribute="top" id="ERk-ND-W2c"/>
+                            <constraint firstItem="1cq-o8-9oU" firstAttribute="leading" secondItem="Klg-tg-5Ph" secondAttribute="leading" id="K7x-dJ-4Fd"/>
+                            <constraint firstItem="Klg-tg-5Ph" firstAttribute="trailing" secondItem="K4g-Cu-Zhy" secondAttribute="trailing" id="KIN-BR-4SJ"/>
+                            <constraint firstItem="Klg-tg-5Ph" firstAttribute="bottom" secondItem="K4g-Cu-Zhy" secondAttribute="bottom" id="OzZ-45-Kha"/>
+                            <constraint firstItem="K4g-Cu-Zhy" firstAttribute="leading" secondItem="Klg-tg-5Ph" secondAttribute="leading" id="aaf-U0-QCb"/>
+                            <constraint firstItem="1cq-o8-9oU" firstAttribute="trailing" secondItem="Klg-tg-5Ph" secondAttribute="trailing" id="uuH-Cx-5z0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Active Courses" image="wallet.pass" catalog="system" id="bbD-n1-Quw"/>
+                    <connections>
+                        <outlet property="navBar" destination="1cq-o8-9oU" id="arO-3c-vEr"/>
+                        <outlet property="tableView" destination="K4g-Cu-Zhy" id="e1R-0z-TcA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7qz-v8-2Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600" y="775"/>
         </scene>
         <!--Course Details View Controller-->
         <scene sceneID="1pJ-Z1-FmQ">
@@ -397,6 +438,7 @@
                     <connections>
                         <segue destination="hQm-DJ-VKe" kind="relationship" relationship="viewControllers" id="AEG-Mu-9oN"/>
                         <segue destination="91X-yO-Bhb" kind="relationship" relationship="viewControllers" id="OTY-Xo-BRR"/>
+                        <segue destination="Lrd-mj-URE" kind="relationship" relationship="viewControllers" id="4pG-Pg-ViA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xS4-gq-7oU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -406,8 +448,9 @@
     </scenes>
     <resources>
         <image name="book" catalog="system" width="128" height="102"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="wallet.pass" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

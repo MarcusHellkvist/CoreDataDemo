@@ -32,6 +32,8 @@ class ProfileViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
+        signedInUser = DataManager.shared.getSignedInUser()
+        
         getUserCourses()
     }
     
@@ -42,9 +44,13 @@ class ProfileViewController: UIViewController {
     }
     
     func getUserCourses() {
-        signedInUser = DataManager.shared.getSignedInUser()
+        userCourses.removeAll()
         if let allCourses = signedInUser.course?.allObjects as? [Course]{
-            userCourses = allCourses
+            for course in allCourses {
+                if course.status == 1 {
+                    userCourses.append(course)
+                }
+            }
         }
         DispatchQueue.main.async {
             self.tableView.reloadData()

@@ -108,6 +108,7 @@ class DataManager {
         course.length = length
         course.teacher = teacher
         course.category = category
+        course.status = 0
     }
     
     func getCourses() -> [Course] {

@@ -16,12 +16,13 @@ extension Course {
         return NSFetchRequest<Course>(entityName: "Course")
     }
 
+    @NSManaged public var category: Int64
     @NSManaged public var desc: String?
     @NSManaged public var length: Int64
     @NSManaged public var rating: Int64
     @NSManaged public var teacher: String?
     @NSManaged public var title: String?
-    @NSManaged public var category: Int64
+    @NSManaged public var status: Int64
     @NSManaged public var ofUser: User?
 
 }

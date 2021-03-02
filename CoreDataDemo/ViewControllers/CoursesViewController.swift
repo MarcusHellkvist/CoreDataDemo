@@ -11,6 +11,8 @@ import CoreData
 class CoursesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    
+    var signedInUser: User!
         
     let cellIdentifier: String = "CourseTableViewCell"
     var categories: [CategoryModel] = [CategoryModel]()
@@ -27,16 +29,38 @@ class CoursesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     
+        signedInUser = DataManager.shared.getSignedInUser()
+        
         getCourses()
         sortCourses()
     }
     
     func createCourses() {
+        
+        //WEBBUTVECKLING
         DataManager.shared.createCourse(title: "HTML och CSS", desc: "Innehållstext", rating: 5, length: 10, teacher: "Fredrik Lingodricka", category: 1)
         DataManager.shared.createCourse(title: "Avancerad CSS", desc: "Innehållstext", rating: 4, length: 12, teacher: "Jonny Senap", category: 1)
-        DataManager.shared.createCourse(title: "JavaScript för Nybörjare", desc: "Innehållstext", rating: 3, length: 16, teacher: "Henrik Script", category: 2)
-        DataManager.shared.createCourse(title: "Avancerad JavaScript och serverprogrammering", desc: "Innehållstext", rating: 1, length: 25, teacher: "Henrik Script", category: 3)
-        DataManager.shared.createCourse(title: "JavaScript för Webben", desc: "Innehållstext", rating: 2, length: 8, teacher: "Henrik Script", category: 4)
+        DataManager.shared.createCourse(title: "JavaScript för Nybörjare", desc: "Innehållstext", rating: 3, length: 16, teacher: "Henrik Script", category: 1)
+        DataManager.shared.createCourse(title: "Avancerad JavaScript och serverprogrammering", desc: "Innehållstext", rating: 1, length: 25, teacher: "Henrik Script", category: 1)
+        DataManager.shared.createCourse(title: "JavaScript för Webben", desc: "Innehållstext", rating: 2, length: 8, teacher: "Henrik Script", category: 1)
+        DataManager.shared.createCourse(title: "ASP.NET Core MVC", desc: "Innehållstext", rating: 2, length: 16, teacher: "Anders Megapanna", category: 1)
+        
+        //PROGRAMMERING FÖR MOBILA ENHETER
+        DataManager.shared.createCourse(title: "Introduktion till Android Programmering", desc: "Innehållstext", rating: 5, length: 20, teacher: "William Fruktkorg", category: 2)
+        DataManager.shared.createCourse(title: "Avancerad Android programmering", desc: "Innehållstext", rating: 4, length: 16, teacher: "William Fruktkorg", category: 2)
+        DataManager.shared.createCourse(title: "iOS Utveckling med Objective-C", desc: "Innehållstext", rating: 5, length: 4, teacher: "Michael von Bilexpert", category: 2)
+        DataManager.shared.createCourse(title: "iOS utveckling med Swift", desc: "Innehållstext", rating: 5, length: 30, teacher: "Michael von Bilexpert", category: 2)
+        DataManager.shared.createCourse(title: "Design och layout för mobila enheter", desc: "Innehållstext", rating: 2, length: 11, teacher: "Larry Stenkast", category: 2)
+        
+        //BACKEND PROGRAMMERING
+        DataManager.shared.createCourse(title: "REST API med node.js", desc: "Innehållstext", rating: 3, length: 9, teacher: "Jimmy Motvind", category: 3)
+        DataManager.shared.createCourse(title: "Web API med .NET Core", desc: "Innehållstext", rating: 4, length: 5, teacher: "Jimmy Motvind", category: 3)
+        
+        //DATABASER
+        DataManager.shared.createCourse(title: "Administrera MS SQL Server", desc: "Innehållstext", rating: 5, length: 9, teacher: "Jessica Snabb", category: 4)
+        DataManager.shared.createCourse(title: "Databas design", desc: "Innehållstext", rating: 1, length: 14, teacher: "Lars-Åke Hjulbent", category: 4)
+        DataManager.shared.createCourse(title: "Bygga system med MongoDB", desc: "Innehållstext", rating: 2, length: 18, teacher: "David Databas", category: 4)
+        DataManager.shared.createCourse(title: "Vad är ORM? Hur använder man ett sådant verktyg", desc: "Innehållstext", rating: 5, length: 2, teacher: "Sir Väss", category: 4)
         
         DataManager.shared.saveContext()
         coreDataCourses = DataManager.shared.getCourses()
@@ -78,48 +102,6 @@ class CoursesViewController: UIViewController {
         categories.append(categoryD)
         
     }
-    
-//    func setupCourses() {
-//        // CREATE COURSES
-//        let course1 = CourseModel(title: "HTML och CSS",
-//                                  description: "Innehållstext",
-//                                  length: 6,
-//                                  teacher: "Jonny Senap",
-//                                  rating: 5)
-//
-//        let course2 = CourseModel(title: "Avancerad CSS",
-//                                  description: "Innehållstext",
-//                                  length: 10,
-//                                  teacher: "Jonny Senap",
-//                                  rating: 5)
-//
-//        let course3 = CourseModel(title: "Introduktion till Android programmering",
-//                                  description: "Innehållstext",
-//                                  length: 12,
-//                                  teacher: "Berra Bus",
-//                                  rating: 2)
-//
-//        let course4 = CourseModel(title: "Avancerad Android programmering",
-//                                  description: "Innehållstext",
-//                                  length: 19,
-//                                  teacher: "Fredrik Lingonbuske",
-//                                  rating: 3)
-//
-//
-//        // CREATE CATEGORIES
-//        let categoryA = CategoryModel(name: "Webbutveckling", courses: [course1, course2])
-//        let categoryB = CategoryModel(name: "Programmering för mobila enheter", courses: [course3, course4])
-//
-//        categories.append(categoryA)
-//        categories.append(categoryB)
-//
-//        do{
-//            let request = Course.fetchRequest() as NSFetchRequest<Course>
-//            self.coreDataCourses = try context.fetch(request)
-//        } catch {
-//            print("Could not get courses.")
-//        }
-//    }
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -173,10 +155,23 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension CoursesViewController: CourseDelegate{
+    
+    /*
+     Status:
+     0 Default
+     1 Wishlist
+     2 Bought
+     */
+    
     func addCourseToUser(course: Course) {
-        
-        let signedInUser = DataManager.shared.getSignedInUser()
+        course.status = 1
         signedInUser.addToCourse(course)
         DataManager.shared.saveContext()
     }
+    
+    func addCourseToUserBuy(course: Course) {
+        course.status = 2
+        signedInUser.addToCourse(course)
+    }
+    
 }

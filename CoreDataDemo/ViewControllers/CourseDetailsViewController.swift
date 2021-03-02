@@ -60,6 +60,16 @@ class CourseDetailsViewController: UIViewController {
     }
     
     @IBAction func BuyButton(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Buy Course", message: "Do you want to buy this course?", preferredStyle: .alert)
+        let buyButton = UIAlertAction(title: "Buy", style: .default) { (action) in
+            self.delegate?.addCourseToUserBuy(course: self.course!)
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(buyButton)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
