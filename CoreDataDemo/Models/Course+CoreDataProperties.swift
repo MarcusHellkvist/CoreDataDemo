@@ -2,7 +2,7 @@
 //  Course+CoreDataProperties.swift
 //  CoreDataDemo
 //
-//  Created by Marcus Hellkvist on 2021-03-02.
+//  Created by Marcus Hellkvist on 2021-03-03.
 //
 //
 
@@ -22,8 +22,9 @@ extension Course {
     @NSManaged public var rating: Int64
     @NSManaged public var teacher: String?
     @NSManaged public var title: String?
-    @NSManaged public var status: Int64
-    @NSManaged public var ofUser: User?
+    @NSManaged public var ofUserWishlist: User?
+    @NSManaged public var ofUserEnrolled: User?
+    @NSManaged public var ofUserBought: User?
 
 }
 

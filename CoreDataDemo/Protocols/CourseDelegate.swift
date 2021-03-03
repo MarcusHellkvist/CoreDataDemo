@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CourseDelegate: class {
-    func addCourseToUser(course: Course)
-    func addCourseToUserBuy(course: Course)
-    func addCourseToUserRegister(course: Course)
+    func addToWishlist(course: Course)
+    func addToBought(course: Course)
+    func addToEnrolled(course: Course)
 }

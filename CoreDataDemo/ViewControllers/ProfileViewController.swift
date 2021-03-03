@@ -19,6 +19,9 @@ class ProfileViewController: UIViewController {
     let cellIdentifier: String = "CourseTableViewCell"
     var signedInUser: User!
     
+    //NEW!
+    var userWishlist: [Course] = [Course]()
+    
     let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
@@ -34,49 +37,40 @@ class ProfileViewController: UIViewController {
         
         signedInUser = DataManager.shared.getSignedInUser()
         
-        getUserCourses()
+        getWishlist()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getUserCourses()
+        getWishlist()
     }
     
-    @objc func refreshTableView(){
-        getUserCourses()
-        refreshControl.endRefreshing()
-        
-    }
-    
-    func getUserCourses() {
-        userCourses.removeAll()
-        if let allCourses = signedInUser.course?.allObjects as? [Course]{
-            for course in allCourses {
-                if course.status == 1 {
-                    userCourses.append(course)
-                }
-            }
+    func getWishlist() {
+        userWishlist.removeAll()
+        if let wishlist = signedInUser.wishlist?.allObjects as? [Course] {
+            userWishlist = wishlist
         }
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
-    func updateCourseStatus(course: Course, statusNumber: Int) {
-        course.status = Int64(statusNumber)
-        DataManager.shared.saveContext()
-        getUserCourses()
+    
+    @objc func refreshTableView(){
+        getWishlist()
+        refreshControl.endRefreshing()
+
     }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userCourses.count
+        return userWishlist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourseTableViewCell
         
-        let course = userCourses[indexPath.row]
+        let course = userWishlist[indexPath.row]
         
         cell.titleLabel.text = course.title
         cell.descriptionLabel.text = course.desc
@@ -86,21 +80,26 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let course = userCourses[indexPath.row]
-        
+        let course = userWishlist[indexPath.row]
+
         let alert = UIAlertController(title: "\(course.title)", message: "What do you wanna do?", preferredStyle: .alert)
-        
+
         let buyButton = UIAlertAction(title: "Buy", style: .default) { (action) in
-            self.updateCourseStatus(course: course, statusNumber: 2)
+            self.signedInUser.removeFromWishlist(course)
+            self.signedInUser.addToBought(course)
+            DataManager.shared.saveContext()
         }
         let registerButton = UIAlertAction(title: "Register", style: .default) { (action) in
-            //self.updateCourseStatus(course: course, statusNumber: 3)
+            self.signedInUser.removeFromWishlist(course)
+            self.signedInUser.addToEnrolled(course)
+            DataManager.shared.saveContext()
         }
         let deleteButton = UIAlertAction(title: "Remove from wishlist", style: .destructive) { (action) in
-            self.updateCourseStatus(course: course, statusNumber: 0)
+            self.signedInUser.removeFromWishlist(course)
+            DataManager.shared.saveContext()
         }
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
+
         alert.addAction(buyButton)
         alert.addAction(registerButton)
         alert.addAction(deleteButton)
@@ -110,14 +109,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-        
-                let course = self.userCourses[indexPath.row]
-                self.signedInUser.removeFromCourse(course)
+
+                let course = self.userWishlist[indexPath.row]
+                self.signedInUser.removeFromWishlist(course)
                 DataManager.shared.saveContext()
-                self.getUserCourses()
-        
+                self.getWishlist()
+
             }
-        
+
         return UISwipeActionsConfiguration(actions: [action])
     }
 }

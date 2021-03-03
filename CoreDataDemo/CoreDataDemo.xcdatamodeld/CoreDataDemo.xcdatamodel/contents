@@ -5,10 +5,11 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="length" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="teacher" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="course" inverseEntity="User"/>
+        <relationship name="ofUserBought" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="bought" inverseEntity="User"/>
+        <relationship name="ofUserEnrolled" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="enrolled" inverseEntity="User"/>
+        <relationship name="ofUserWishlist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="wishlist" inverseEntity="User"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -22,11 +23,13 @@
         <attribute name="mobile" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
-        <relationship name="course" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUser" inverseEntity="Course"/>
+        <relationship name="bought" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="ofUserBought" inverseEntity="Course"/>
+        <relationship name="enrolled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="ofUserEnrolled" inverseEntity="Course"/>
+        <relationship name="wishlist" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUserWishlist" inverseEntity="Course"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-45" positionY="63" width="128" height="149"/>
+        <element name="Course" positionX="-45" positionY="63" width="128" height="164"/>
         <element name="Person" positionX="-54" positionY="-9" width="128" height="74"/>
-        <element name="User" positionX="-36" positionY="36" width="128" height="134"/>
+        <element name="User" positionX="-36" positionY="36" width="128" height="164"/>
     </elements>
 </model>

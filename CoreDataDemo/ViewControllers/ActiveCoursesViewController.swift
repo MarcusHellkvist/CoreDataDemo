@@ -15,6 +15,8 @@ class ActiveCoursesViewController: UIViewController {
     let cellIdentifier: String = "CourseTableViewCell"
     
     var userBoughtCourses: [Course] = [Course]()
+    var userEnrolledCourses: [Course] = [Course]()
+    var allCourses: [[Course]] = [[Course]]()
     var signedInUser: User!
     
     override func viewDidLoad() {
@@ -26,41 +28,61 @@ class ActiveCoursesViewController: UIViewController {
         tableView.dataSource = self
         
         signedInUser = DataManager.shared.getSignedInUser()
-        userBoughtCourses = DataManager.shared.getUserBoughtCourses(user: signedInUser)
-        print("\(userBoughtCourses.count)")
-        //getBoughtCourses()
+        getAllCourses()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //getBoughtCourses()
+        getAllCourses()
     }
     
-//    func getBoughtCourses() {
-//        userBoughtCourses.removeAll()
-//        if let allCourses = signedInUser.course?.allObjects as? [Course]{
-//            for course in allCourses {
-//                if course.status == 2 {
-//                    userBoughtCourses.append(course)
-//                }
-//            }
-//        }
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
-//    }
+    func getAllCourses() {
+        // CLEAN ALL ARRAYS
+        userBoughtCourses.removeAll()
+        userEnrolledCourses.removeAll()
+        allCourses.removeAll()
+        
+        if let bought = signedInUser.bought?.allObjects as? [Course]{
+            allCourses.append(bought)
+        }
+        
+        if let enrolled = signedInUser.enrolled?.allObjects as? [Course] {
+            allCourses.append(enrolled)
+        }
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
 
 }
 
 extension ActiveCoursesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Bought"
+        case 1:
+            return "Registered"
+        default:
+            return "Unknown"
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return allCourses.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userBoughtCourses.count
+        return allCourses[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourseTableViewCell
         
-        let course = userBoughtCourses[indexPath.row]
+        let course = allCourses[indexPath.section][indexPath.row]
         
         cell.titleLabel.text = course.title
         cell.descriptionLabel.text = course.desc

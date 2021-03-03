@@ -146,7 +146,6 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "courseDetailSegue" {
             guard let destVC = segue.destination as? CourseDetailsViewController else { return }
-            //guard let course = sender as? CourseModel else { return }
             guard let course = sender as? Course else { return }
             destVC.course = course
             destVC.delegate = self
@@ -156,31 +155,22 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CoursesViewController: CourseDelegate{
     
-    
-    
-    /*
-     Status:
-     0 Default
-     1 Wishlist
-     2 Bought
-     */
-    
-    func addCourseToUser(course: Course) {
-        course.status = 1
-        signedInUser.addToCourse(course)
+    func addToWishlist(course: Course) {
+        signedInUser.addToWishlist(course)
         DataManager.shared.saveContext()
     }
     
-    func addCourseToUserBuy(course: Course) {
-        course.status = 2
-        signedInUser.addToCourse(course)
+    func addToBought(course: Course) {
+        signedInUser.addToBought(course)
         DataManager.shared.saveContext()
-
+        
     }
     
-    func addCourseToUserRegister(course: Course) {
-        course.status = 3
-        signedInUser.addToCourse(course)
+    func addToEnrolled(course: Course) {
+        signedInUser.addToEnrolled(course)
         DataManager.shared.saveContext()
     }
+    
+    
+    
 }

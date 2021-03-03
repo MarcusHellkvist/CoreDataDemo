@@ -59,7 +59,7 @@ class CourseDetailsViewController: UIViewController {
         
         let okButton = UIAlertAction(title: "Ok", style: .default) { (action) in
             
-            self.delegate?.addCourseToUser(course: self.course!)
+            self.delegate?.addToWishlist(course: self.course!)
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -67,13 +67,23 @@ class CourseDetailsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     @IBAction func registerButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Enrolled", message: "You are now enrolled in this course!", preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "Ok", style: .default) { (action) in
+            
+            self.delegate?.addToEnrolled(course: self.course!)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func BuyButton(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Buy Course", message: "Do you want to buy this course?", preferredStyle: .alert)
         let buyButton = UIAlertAction(title: "Buy", style: .default) { (action) in
-            self.delegate?.addCourseToUserBuy(course: self.course!)
+            self.delegate?.addToBought(course: self.course!)
             self.dismiss(animated: true, completion: nil)
         }
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
