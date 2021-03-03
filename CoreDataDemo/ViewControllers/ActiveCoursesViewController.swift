@@ -26,22 +26,29 @@ class ActiveCoursesViewController: UIViewController {
         tableView.dataSource = self
         
         signedInUser = DataManager.shared.getSignedInUser()
-        getBoughtCourses()
+        userBoughtCourses = DataManager.shared.getUserBoughtCourses(user: signedInUser)
+        print("\(userBoughtCourses.count)")
+        //getBoughtCourses()
 
     }
     
-    func getBoughtCourses() {
-        if let allCourses = signedInUser.course?.allObjects as? [Course]{
-            for course in allCourses {
-                if course.status == 2 {
-                    userBoughtCourses.append(course)
-                }
-            }
-        }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        //getBoughtCourses()
     }
+    
+//    func getBoughtCourses() {
+//        userBoughtCourses.removeAll()
+//        if let allCourses = signedInUser.course?.allObjects as? [Course]{
+//            for course in allCourses {
+//                if course.status == 2 {
+//                    userBoughtCourses.append(course)
+//                }
+//            }
+//        }
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+//    }
 
 }
 

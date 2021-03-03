@@ -55,8 +55,18 @@ class CourseDetailsViewController: UIViewController {
     
     
     @IBAction func AddToWishlist(_ sender: UIButton) {
-        delegate?.addCourseToUser(course: course!)
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Wishlish", message: "Course has been added to your wishlish", preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "Ok", style: .default) { (action) in
+            
+            self.delegate?.addCourseToUser(course: self.course!)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
+    }
+    @IBAction func registerButton(_ sender: UIButton) {
     }
     
     @IBAction func BuyButton(_ sender: UIButton) {

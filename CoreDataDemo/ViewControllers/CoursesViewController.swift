@@ -156,6 +156,8 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CoursesViewController: CourseDelegate{
     
+    
+    
     /*
      Status:
      0 Default
@@ -172,6 +174,13 @@ extension CoursesViewController: CourseDelegate{
     func addCourseToUserBuy(course: Course) {
         course.status = 2
         signedInUser.addToCourse(course)
+        DataManager.shared.saveContext()
+
     }
     
+    func addCourseToUserRegister(course: Course) {
+        course.status = 3
+        signedInUser.addToCourse(course)
+        DataManager.shared.saveContext()
+    }
 }

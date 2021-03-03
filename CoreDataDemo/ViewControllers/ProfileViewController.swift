@@ -37,6 +37,10 @@ class ProfileViewController: UIViewController {
         getUserCourses()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        getUserCourses()
+    }
+    
     @objc func refreshTableView(){
         getUserCourses()
         refreshControl.endRefreshing()
@@ -56,6 +60,12 @@ class ProfileViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    func updateCourseStatus(course: Course, statusNumber: Int) {
+        course.status = Int64(statusNumber)
+        DataManager.shared.saveContext()
+        getUserCourses()
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
@@ -73,6 +83,29 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         cell.ratingLabel.text = String(course.rating)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let course = userCourses[indexPath.row]
+        
+        let alert = UIAlertController(title: "\(course.title)", message: "What do you wanna do?", preferredStyle: .alert)
+        
+        let buyButton = UIAlertAction(title: "Buy", style: .default) { (action) in
+            self.updateCourseStatus(course: course, statusNumber: 2)
+        }
+        let registerButton = UIAlertAction(title: "Register", style: .default) { (action) in
+            //self.updateCourseStatus(course: course, statusNumber: 3)
+        }
+        let deleteButton = UIAlertAction(title: "Remove from wishlist", style: .destructive) { (action) in
+            self.updateCourseStatus(course: course, statusNumber: 0)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(buyButton)
+        alert.addAction(registerButton)
+        alert.addAction(deleteButton)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

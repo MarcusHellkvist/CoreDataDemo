@@ -382,10 +382,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-Os-1Zj">
+                                <rect key="frame" x="20" y="702" width="374" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerButton:" destination="AQ8-46-Uvq" eventType="touchUpInside" id="g0W-gd-NoA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fCT-Be-b8l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Vbz-Os-1Zj" firstAttribute="leading" secondItem="fCT-Be-b8l" secondAttribute="leading" constant="20" id="3GM-G2-fzk"/>
                             <constraint firstItem="fCT-Be-b8l" firstAttribute="trailing" secondItem="yru-Vr-gfh" secondAttribute="trailing" constant="20" id="3Hb-d2-iIZ"/>
                             <constraint firstItem="OS7-B2-kSc" firstAttribute="leading" secondItem="fCT-Be-b8l" secondAttribute="leading" constant="20" id="3g3-OK-eRg"/>
                             <constraint firstItem="GJX-KA-8T0" firstAttribute="top" secondItem="yru-Vr-gfh" secondAttribute="bottom" constant="8" symbolic="YES" id="5cs-g9-F0T"/>
@@ -402,6 +410,7 @@
                             <constraint firstItem="SLP-B8-Xfs" firstAttribute="top" secondItem="GJX-KA-8T0" secondAttribute="bottom" constant="8" symbolic="YES" id="cj6-I8-38V"/>
                             <constraint firstItem="7p7-fW-QPi" firstAttribute="top" secondItem="SLP-B8-Xfs" secondAttribute="bottom" constant="8" symbolic="YES" id="gA1-Te-ngw"/>
                             <constraint firstItem="fCT-Be-b8l" firstAttribute="trailing" secondItem="Wfq-rg-5Yr" secondAttribute="trailing" constant="20" id="hP3-xZ-lbX"/>
+                            <constraint firstItem="fCT-Be-b8l" firstAttribute="trailing" secondItem="Vbz-Os-1Zj" secondAttribute="trailing" constant="20" id="iSw-GY-pZI"/>
                             <constraint firstItem="fCT-Be-b8l" firstAttribute="trailing" secondItem="EG3-I8-tSD" secondAttribute="trailing" constant="20" id="imq-D6-bOB"/>
                             <constraint firstItem="EG3-I8-tSD" firstAttribute="leading" secondItem="fCT-Be-b8l" secondAttribute="leading" constant="20" id="jsK-yQ-2PS"/>
                             <constraint firstItem="Jbz-Sa-1xK" firstAttribute="trailing" secondItem="fCT-Be-b8l" secondAttribute="trailing" id="m78-tp-kjh"/>
@@ -410,6 +419,7 @@
                             <constraint firstItem="Wfq-rg-5Yr" firstAttribute="leading" secondItem="fCT-Be-b8l" secondAttribute="leading" constant="20" id="tPu-Yt-KqS"/>
                             <constraint firstItem="Wfq-rg-5Yr" firstAttribute="top" secondItem="7p7-fW-QPi" secondAttribute="bottom" constant="8" symbolic="YES" id="vEf-Zi-c0t"/>
                             <constraint firstItem="fCT-Be-b8l" firstAttribute="trailing" secondItem="OS7-B2-kSc" secondAttribute="trailing" constant="20" id="wfz-Nw-kJ5"/>
+                            <constraint firstItem="EG3-I8-tSD" firstAttribute="top" secondItem="Vbz-Os-1Zj" secondAttribute="bottom" constant="8" symbolic="YES" id="y3Q-Wy-VYa"/>
                         </constraints>
                     </view>
                     <connections>
