@@ -121,30 +121,4 @@ class DataManager {
         }
         return courses
     }
-    
-//    func getUserRegisterCourses(user: User) -> [Course] {
-//        var registerCourses: [Course] = []
-//
-//        if let allCourses = user.course?.allObjects as? [Course]{
-//            for course in allCourses {
-//                if course.status == 3 {
-//                    registerCourses.append(course)
-//                }
-//            }
-//        }
-//        return registerCourses
-//    }
-    
-//    func getUserBoughtCourses(user: User) -> [Course] {
-//        var boughtCourses: [Course] = []
-//        
-//        if let allCourses = user.course?.allObjects as? [Course]{
-//            for course in allCourses {
-//                if course.status == 2 {
-//                    boughtCourses.append(course)
-//                }
-//            }
-//        }
-//        return boughtCourses
-//    }
 }
