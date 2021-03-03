@@ -82,7 +82,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let course = userWishlist[indexPath.row]
 
-        let alert = UIAlertController(title: "\(course.title)", message: "What do you wanna do?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "\(course.title!)", message: "What do you wanna do?", preferredStyle: .alert)
 
         let buyButton = UIAlertAction(title: "Buy", style: .default) { (action) in
             self.signedInUser.removeFromWishlist(course)
