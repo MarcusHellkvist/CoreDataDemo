@@ -71,6 +71,10 @@ extension ActiveCoursesViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return allCourses.count
     }
