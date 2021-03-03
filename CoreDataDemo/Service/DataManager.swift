@@ -141,7 +141,7 @@ class DataManager {
         
         if let allCourses = user.course?.allObjects as? [Course]{
             for course in allCourses {
-                if course.status == 3 {
+                if course.status == 2 {
                     boughtCourses.append(course)
                 }
             }
