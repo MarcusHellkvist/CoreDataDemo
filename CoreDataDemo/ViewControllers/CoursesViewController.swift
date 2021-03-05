@@ -14,7 +14,7 @@ class CoursesViewController: UIViewController {
     
     var signedInUser: User!
         
-    let cellIdentifier: String = "CourseTableViewCell"
+    let cellIdentifier: String = "courseCell"
     var categories: [CategoryModel] = [CategoryModel]()
     var signedInUsers: [User] = [User]()
     
@@ -23,9 +23,12 @@ class CoursesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let nib = UINib(nibName: cellIdentifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+        
+        view.layer.backgroundColor = UIColor.myBlue.cgColor
+        tableView.backgroundColor = UIColor.myBlue
+        UITabBar.appearance().tintColor = UIColor.myYellow
+        UITabBar.appearance().barTintColor = UIColor.myBlue
+        
         tableView.delegate = self
         tableView.dataSource = self
     
@@ -105,13 +108,26 @@ class CoursesViewController: UIViewController {
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return categories[section].name
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 50))
+        returnedView.backgroundColor = UIColor.myBlue
+        
+        let label = UILabel(frame: CGRect(x: 15, y: 0, width: self.view.bounds.size.width, height: 50))
+        label.text = categories[section].name
+        label.textColor = UIColor.myWhite
+        returnedView.addSubview(label)
+        
+        return returnedView
     }
 
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,14 +140,16 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewCourseTableViewCell
         
         let courses = categories[indexPath.section].courses
         let course = courses[indexPath.row]
         
         cell.titleLabel.text = course.title
-        cell.descriptionLabel.text = course.desc
-        cell.ratingLabel.text = String(course.rating)
+        cell.lenghtLabel.text = ("estimated time: \(course.length) hours")
+        //cell.ratingLabel.text = String(course.rating)
+        
+        
         
         return cell
     }

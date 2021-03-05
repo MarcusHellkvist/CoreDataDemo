@@ -10,6 +10,7 @@ import CoreData
 
 class RegisterViewController: UIViewController {
     
+    @IBOutlet var navBar: UINavigationBar!
     weak var delegate: UserDelegate?
     
     @IBOutlet var usernameField: UITextField!
@@ -24,6 +25,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
     @IBAction func RegisterButton(_ sender: UIButton) {
         
         let username = usernameField.text ?? "dev1"
@@ -39,6 +41,9 @@ class RegisterViewController: UIViewController {
         delegate?.updateUsers()
         self.dismiss(animated: true, completion: nil)
         
+    }
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
