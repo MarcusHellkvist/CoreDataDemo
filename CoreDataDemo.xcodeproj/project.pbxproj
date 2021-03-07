@@ -11,6 +11,7 @@
 		0300C13125EFBB8100F4DB3C /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300C12D25EFBB8100F4DB3C /* Course+CoreDataProperties.swift */; };
 		0300C13225EFBB8100F4DB3C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300C12E25EFBB8100F4DB3C /* User+CoreDataClass.swift */; };
 		0300C13325EFBB8100F4DB3C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300C12F25EFBB8100F4DB3C /* User+CoreDataProperties.swift */; };
+		03134A2225F56609004B42A7 /* WishlishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03134A2125F56609004B42A7 /* WishlishTableViewCell.swift */; };
 		03270FA725EE80B1004A62B9 /* ActiveCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03270FA625EE80B1004A62B9 /* ActiveCoursesViewController.swift */; };
 		03327F8225ED0263004034D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03327F8125ED0263004034D2 /* DataManager.swift */; };
 		03946D2525F2499E004D15B9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03946D2425F2499E004D15B9 /* CustomButton.swift */; };
@@ -45,6 +46,7 @@
 		0300C12D25EFBB8100F4DB3C /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0300C12E25EFBB8100F4DB3C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0300C12F25EFBB8100F4DB3C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		03134A2125F56609004B42A7 /* WishlishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlishTableViewCell.swift; sourceTree = "<group>"; };
 		03270FA625EE80B1004A62B9 /* ActiveCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCoursesViewController.swift; sourceTree = "<group>"; };
 		03327F8125ED0263004034D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		03946D2425F2499E004D15B9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				03F98C9925E80ACB002BD3A6 /* CourseModel.swift */,
 				03F98C9C25E80AFB002BD3A6 /* CategoryModel.swift */,
 				03946D3225F2894C004D15B9 /* NewCourseTableViewCell.swift */,
+				03134A2125F56609004B42A7 /* WishlishTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03134A2225F56609004B42A7 /* WishlishTableViewCell.swift in Sources */,
 				03946D2D25F259D3004D15B9 /* CustomTextField.swift in Sources */,
 				03F98C9D25E80AFB002BD3A6 /* CategoryModel.swift in Sources */,
 				03F98C7D25E7FFB4002BD3A6 /* LoginViewController.swift in Sources */,

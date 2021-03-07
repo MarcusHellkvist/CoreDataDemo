@@ -9,14 +9,12 @@ import UIKit
 import CoreData
 
 class ProfileViewController: UIViewController {
-
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var navBar: UINavigationBar!
     
     var userCourses: [Course] = [Course]()
-    let cellIdentifier: String = "CourseTableViewCell"
+    let cellIdentifier: String = "courseCell"
     var signedInUser: User!
     
     //NEW!
@@ -27,8 +25,16 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: cellIdentifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+        // STYLE
+        view.layer.backgroundColor = UIColor.myBlue.cgColor
+        tableView.backgroundColor = UIColor.myBlue
+        
+        // OVERALL CHANGES TO THE UINAV BAR (MOVE TO FIRST VIEW)
+        UINavigationBar.appearance().barTintColor = UIColor.myBlue
+        UINavigationBar.appearance().tintColor = UIColor.myBlue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -68,13 +74,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! WishlishTableViewCell
         
         let course = userWishlist[indexPath.row]
         
         cell.titleLabel.text = course.title
-        cell.descriptionLabel.text = course.desc
-        cell.ratingLabel.text = String(course.rating)
+        cell.lenghtLabel.text = String(course.length)
         
         return cell
     }
