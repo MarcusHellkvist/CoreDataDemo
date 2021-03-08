@@ -10,9 +10,9 @@
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="teacher" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="ofUserBought" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="bought" inverseEntity="User"/>
-        <relationship name="ofUserEnrolled" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="enrolled" inverseEntity="User"/>
-        <relationship name="ofUserWishlist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="wishlist" inverseEntity="User"/>
+        <relationship name="ofUserBought" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="bought" inverseEntity="User"/>
+        <relationship name="ofUserEnrolled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="enrolled" inverseEntity="User"/>
+        <relationship name="ofUserWishlist" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="wishlist" inverseEntity="User"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -26,8 +26,8 @@
         <attribute name="mobile" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
-        <relationship name="bought" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="ofUserBought" inverseEntity="Course"/>
-        <relationship name="enrolled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="ofUserEnrolled" inverseEntity="Course"/>
+        <relationship name="bought" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUserBought" inverseEntity="Course"/>
+        <relationship name="enrolled" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUserEnrolled" inverseEntity="Course"/>
         <relationship name="wishlist" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="ofUserWishlist" inverseEntity="Course"/>
     </entity>
     <elements>

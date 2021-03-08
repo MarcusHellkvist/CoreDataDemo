@@ -11,14 +11,14 @@
 		03327F8225ED0263004034D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03327F8125ED0263004034D2 /* DataManager.swift */; };
 		0379FDED25F645A000114C31 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FDEC25F645A000114C31 /* RatingModel.swift */; };
 		0379FDF125F65DC100114C31 /* ProgressionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FDF025F65DC100114C31 /* ProgressionTableViewCell.swift */; };
-		0379FDF825F6604700114C31 /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FDF425F6604700114C31 /* Course+CoreDataClass.swift */; };
-		0379FDF925F6604700114C31 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FDF525F6604700114C31 /* Course+CoreDataProperties.swift */; };
-		0379FDFA25F6604700114C31 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FDF625F6604700114C31 /* User+CoreDataClass.swift */; };
-		0379FDFB25F6604700114C31 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FDF725F6604700114C31 /* User+CoreDataProperties.swift */; };
 		03946D2525F2499E004D15B9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03946D2425F2499E004D15B9 /* CustomButton.swift */; };
 		03946D2925F25595004D15B9 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03946D2825F25595004D15B9 /* CustomColors.swift */; };
 		03946D2D25F259D3004D15B9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03946D2C25F259D3004D15B9 /* CustomTextField.swift */; };
 		03946D3325F2894C004D15B9 /* NewCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03946D3225F2894C004D15B9 /* NewCourseTableViewCell.swift */; };
+		03F3298F25F678EC00467A67 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F3298B25F678EC00467A67 /* User+CoreDataClass.swift */; };
+		03F3299025F678EC00467A67 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F3298C25F678EC00467A67 /* User+CoreDataProperties.swift */; };
+		03F3299125F678EC00467A67 /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F3298D25F678EC00467A67 /* Course+CoreDataClass.swift */; };
+		03F3299225F678EC00467A67 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F3298E25F678EC00467A67 /* Course+CoreDataProperties.swift */; };
 		03F98C5C25E7D8CE002BD3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F98C5B25E7D8CE002BD3A6 /* AppDelegate.swift */; };
 		03F98C5E25E7D8CE002BD3A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F98C5D25E7D8CE002BD3A6 /* SceneDelegate.swift */; };
 		03F98C6025E7D8CE002BD3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F98C5F25E7D8CE002BD3A6 /* ViewController.swift */; };
@@ -47,14 +47,14 @@
 		03327F8125ED0263004034D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0379FDEC25F645A000114C31 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
 		0379FDF025F65DC100114C31 /* ProgressionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewCell.swift; sourceTree = "<group>"; };
-		0379FDF425F6604700114C31 /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0379FDF525F6604700114C31 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0379FDF625F6604700114C31 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0379FDF725F6604700114C31 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		03946D2425F2499E004D15B9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		03946D2825F25595004D15B9 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		03946D2C25F259D3004D15B9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		03946D3225F2894C004D15B9 /* NewCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCourseTableViewCell.swift; sourceTree = "<group>"; };
+		03F3298B25F678EC00467A67 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		03F3298C25F678EC00467A67 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		03F3298D25F678EC00467A67 /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
+		03F3298E25F678EC00467A67 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		03F98C5825E7D8CE002BD3A6 /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F98C5B25E7D8CE002BD3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F98C5D25E7D8CE002BD3A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,10 +150,10 @@
 		03F98C7825E7DA77002BD3A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0379FDF425F6604700114C31 /* Course+CoreDataClass.swift */,
-				0379FDF525F6604700114C31 /* Course+CoreDataProperties.swift */,
-				0379FDF625F6604700114C31 /* User+CoreDataClass.swift */,
-				0379FDF725F6604700114C31 /* User+CoreDataProperties.swift */,
+				03F3298B25F678EC00467A67 /* User+CoreDataClass.swift */,
+				03F3298C25F678EC00467A67 /* User+CoreDataProperties.swift */,
+				03F3298D25F678EC00467A67 /* Course+CoreDataClass.swift */,
+				03F3298E25F678EC00467A67 /* Course+CoreDataProperties.swift */,
 				03F98CCC25EA7B60002BD3A6 /* Person+CoreDataClass.swift */,
 				03F98CCD25EA7B60002BD3A6 /* Person+CoreDataProperties.swift */,
 				03F98C9925E80ACB002BD3A6 /* CourseModel.swift */,
@@ -271,9 +271,7 @@
 				03F98C9D25E80AFB002BD3A6 /* CategoryModel.swift in Sources */,
 				03F98C7D25E7FFB4002BD3A6 /* LoginViewController.swift in Sources */,
 				03F98C6025E7D8CE002BD3A6 /* ViewController.swift in Sources */,
-				0379FDF925F6604700114C31 /* Course+CoreDataProperties.swift in Sources */,
 				03946D3325F2894C004D15B9 /* NewCourseTableViewCell.swift in Sources */,
-				0379FDFA25F6604700114C31 /* User+CoreDataClass.swift in Sources */,
 				03F98C6625E7D8CE002BD3A6 /* CoreDataDemo.xcdatamodeld in Sources */,
 				03F98C8525E80187002BD3A6 /* UserDelegate.swift in Sources */,
 				03946D2925F25595004D15B9 /* CustomColors.swift in Sources */,
@@ -285,15 +283,17 @@
 				0379FDF125F65DC100114C31 /* ProgressionTableViewCell.swift in Sources */,
 				03F98CA125E80B69002BD3A6 /* CourseTableViewCell.swift in Sources */,
 				03F98C8125E7FFCE002BD3A6 /* RegisterViewController.swift in Sources */,
+				03F3298F25F678EC00467A67 /* User+CoreDataClass.swift in Sources */,
+				03F3299025F678EC00467A67 /* User+CoreDataProperties.swift in Sources */,
 				03F98CCF25EA7B60002BD3A6 /* Person+CoreDataProperties.swift in Sources */,
 				03F98C9A25E80ACB002BD3A6 /* CourseModel.swift in Sources */,
 				03F98CCE25EA7B60002BD3A6 /* Person+CoreDataClass.swift in Sources */,
 				03F98C5C25E7D8CE002BD3A6 /* AppDelegate.swift in Sources */,
-				0379FDFB25F6604700114C31 /* User+CoreDataProperties.swift in Sources */,
+				03F3299125F678EC00467A67 /* Course+CoreDataClass.swift in Sources */,
 				03946D2525F2499E004D15B9 /* CustomButton.swift in Sources */,
 				03327F8225ED0263004034D2 /* DataManager.swift in Sources */,
-				0379FDF825F6604700114C31 /* Course+CoreDataClass.swift in Sources */,
 				03F98C5E25E7D8CE002BD3A6 /* SceneDelegate.swift in Sources */,
+				03F3299225F678EC00467A67 /* Course+CoreDataProperties.swift in Sources */,
 				03F98CAD25E80CFE002BD3A6 /* CoursesViewController.swift in Sources */,
 				0379FDED25F645A000114C31 /* RatingModel.swift in Sources */,
 			);
