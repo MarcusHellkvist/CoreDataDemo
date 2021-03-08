@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  CoreDataDemo
 //
-//  Created by Marcus Hellkvist on 2021-03-03.
+//  Created by Marcus Hellkvist on 2021-03-08.
 //
 //
 

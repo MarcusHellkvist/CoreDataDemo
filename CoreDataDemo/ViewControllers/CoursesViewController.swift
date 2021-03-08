@@ -41,29 +41,29 @@ class CoursesViewController: UIViewController {
     func createCourses() {
         
         //WEBBUTVECKLING
-        DataManager.shared.createCourse(title: "HTML och CSS", desc: "Innehållstext", rating: 5, length: 10, teacher: "Fredrik Lingodricka", category: 1)
-        DataManager.shared.createCourse(title: "Avancerad CSS", desc: "Innehållstext", rating: 4, length: 12, teacher: "Jonny Senap", category: 1)
-        DataManager.shared.createCourse(title: "JavaScript för Nybörjare", desc: "Innehållstext", rating: 3, length: 16, teacher: "Henrik Script", category: 1)
-        DataManager.shared.createCourse(title: "Avancerad JavaScript och serverprogrammering", desc: "Innehållstext", rating: 1, length: 25, teacher: "Henrik Script", category: 1)
-        DataManager.shared.createCourse(title: "JavaScript för Webben", desc: "Innehållstext", rating: 2, length: 8, teacher: "Henrik Script", category: 1)
-        DataManager.shared.createCourse(title: "ASP.NET Core MVC", desc: "Innehållstext", rating: 2, length: 16, teacher: "Anders Megapanna", category: 1)
+        DataManager.shared.createCourse(id: 1, title: "HTML och CSS", desc: "Innehållstext", rating: 5, length: 10, teacher: "Fredrik Lingodricka", category: 1, price: 299)
+        DataManager.shared.createCourse(id: 2, title: "Avancerad CSS", desc: "Innehållstext", rating: 4, length: 12, teacher: "Jonny Senap", category: 1, price: 99)
+        DataManager.shared.createCourse(id: 3, title: "JavaScript för Nybörjare", desc: "Innehållstext", rating: 3, length: 16, teacher: "Henrik Script", category: 1, price: 349)
+        DataManager.shared.createCourse(id: 4, title: "Avancerad JavaScript och serverprogrammering", desc: "Innehållstext", rating: 1, length: 25, teacher: "Henrik Script", category: 1, price: 499)
+        DataManager.shared.createCourse(id: 5, title: "JavaScript för Webben", desc: "Innehållstext", rating: 2, length: 8, teacher: "Henrik Script", category: 1, price: 249)
+        DataManager.shared.createCourse(id: 6, title: "ASP.NET Core MVC", desc: "Innehållstext", rating: 2, length: 16, teacher: "Anders Megapanna", category: 1, price: 219)
         
         //PROGRAMMERING FÖR MOBILA ENHETER
-        DataManager.shared.createCourse(title: "Introduktion till Android Programmering", desc: "Innehållstext", rating: 5, length: 20, teacher: "William Fruktkorg", category: 2)
-        DataManager.shared.createCourse(title: "Avancerad Android programmering", desc: "Innehållstext", rating: 4, length: 16, teacher: "William Fruktkorg", category: 2)
-        DataManager.shared.createCourse(title: "iOS Utveckling med Objective-C", desc: "Innehållstext", rating: 5, length: 4, teacher: "Michael von Bilexpert", category: 2)
-        DataManager.shared.createCourse(title: "iOS utveckling med Swift", desc: "Innehållstext", rating: 5, length: 30, teacher: "Michael von Bilexpert", category: 2)
-        DataManager.shared.createCourse(title: "Design och layout för mobila enheter", desc: "Innehållstext", rating: 2, length: 11, teacher: "Larry Stenkast", category: 2)
+        DataManager.shared.createCourse(id: 7, title: "Introduktion till Android Programmering", desc: "Innehållstext", rating: 5, length: 20, teacher: "William Fruktkorg", category: 2, price: 399)
+        DataManager.shared.createCourse(id: 8, title: "Avancerad Android programmering", desc: "Innehållstext", rating: 4, length: 16, teacher: "William Fruktkorg", category: 2, price: 699)
+        DataManager.shared.createCourse(id: 9, title: "iOS Utveckling med Objective-C", desc: "Innehållstext", rating: 5, length: 4, teacher: "Michael von Bilexpert", category: 2, price: 1099)
+        DataManager.shared.createCourse(id: 10, title: "iOS utveckling med Swift", desc: "Innehållstext", rating: 5, length: 30, teacher: "Michael von Bilexpert", category: 2, price: 899)
+        DataManager.shared.createCourse(id: 11, title: "Design och layout för mobila enheter", desc: "Innehållstext", rating: 2, length: 11, teacher: "Larry Stenkast", category: 2, price: 849)
         
         //BACKEND PROGRAMMERING
-        DataManager.shared.createCourse(title: "REST API med node.js", desc: "Innehållstext", rating: 3, length: 9, teacher: "Jimmy Motvind", category: 3)
-        DataManager.shared.createCourse(title: "Web API med .NET Core", desc: "Innehållstext", rating: 4, length: 5, teacher: "Jimmy Motvind", category: 3)
+        DataManager.shared.createCourse(id: 12, title: "REST API med node.js", desc: "Innehållstext", rating: 3, length: 9, teacher: "Jimmy Motvind", category: 3, price: 549)
+        DataManager.shared.createCourse(id: 13, title: "Web API med .NET Core", desc: "Innehållstext", rating: 4, length: 5, teacher: "Jimmy Motvind", category: 3, price: 499)
         
         //DATABASER
-        DataManager.shared.createCourse(title: "Administrera MS SQL Server", desc: "Innehållstext", rating: 5, length: 9, teacher: "Jessica Snabb", category: 4)
-        DataManager.shared.createCourse(title: "Databas design", desc: "Innehållstext", rating: 1, length: 14, teacher: "Lars-Åke Hjulbent", category: 4)
-        DataManager.shared.createCourse(title: "Bygga system med MongoDB", desc: "Innehållstext", rating: 2, length: 18, teacher: "David Databas", category: 4)
-        DataManager.shared.createCourse(title: "Vad är ORM? Hur använder man ett sådant verktyg", desc: "Innehållstext", rating: 5, length: 2, teacher: "Sir Väss", category: 4)
+        DataManager.shared.createCourse(id: 14, title: "Administrera MS SQL Server", desc: "Innehållstext", rating: 5, length: 9, teacher: "Jessica Snabb", category: 4, price: 2499)
+        DataManager.shared.createCourse(id: 15, title: "Databas design", desc: "Innehållstext", rating: 1, length: 14, teacher: "Lars-Åke Hjulbent", category: 4, price: 2199)
+        DataManager.shared.createCourse(id: 16, title: "Bygga system med MongoDB", desc: "Innehållstext", rating: 2, length: 18, teacher: "David Databas", category: 4, price: 1999)
+        DataManager.shared.createCourse(id: 17, title: "Vad är ORM? Hur använder man ett sådant verktyg", desc: "Innehållstext", rating: 5, length: 2, teacher: "Sir Väss", category: 4, price: 1749)
         
         DataManager.shared.saveContext()
         coreDataCourses = DataManager.shared.getCourses()
@@ -105,6 +105,25 @@ class CoursesViewController: UIViewController {
         categories.append(categoryD)
         
     }
+    
+    func getRatingImage(number: Int64) -> UIImage {
+        var ratingImage = UIImage()
+        switch number {
+        case 1:
+            ratingImage = UIImage(named: "star1")!
+        case 2:
+            ratingImage = UIImage(named: "star2")!
+        case 3:
+            ratingImage = UIImage(named: "star3")!
+        case 4:
+            ratingImage = UIImage(named: "star4")!
+        case 5:
+            ratingImage = UIImage(named: "star5")!
+        default:
+            ratingImage = UIImage(named: "star5")!
+        }
+        return ratingImage
+    }
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -127,7 +146,7 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 130
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -146,10 +165,9 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
         let course = courses[indexPath.row]
         
         cell.titleLabel.text = course.title
-        cell.lenghtLabel.text = ("estimated time: \(course.length) hours")
-        //cell.ratingLabel.text = String(course.rating)
-        
-        
+        cell.teacherLabel.text = course.teacher
+        cell.ratingImage.image = getRatingImage(number: course.rating)
+        cell.priceLabel.text = ("\(course.price) kr")
         
         return cell
     }

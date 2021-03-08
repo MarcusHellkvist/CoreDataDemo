@@ -9,16 +9,19 @@ import UIKit
 
 class NewCourseTableViewCell: UITableViewCell {
 
-    @IBOutlet var lenghtLabel: UILabel!
     @IBOutlet var courseView: UIView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var teacherLabel: UILabel!
+    @IBOutlet var ratingImage: UIImageView!
+    @IBOutlet var priceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         titleLabel.textColor = UIColor.white
-        lenghtLabel.textColor = UIColor.white
+        teacherLabel.textColor = UIColor.white
+        priceLabel.textColor = UIColor.white
         
         self.backgroundColor = UIColor.myBlue
         

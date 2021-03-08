@@ -100,14 +100,16 @@ class DataManager {
         return signedInUser[0]
     }
     
-    func createCourse(title: String, desc: String, rating: Int64, length: Int64, teacher: String, category: Int64){
+    func createCourse(id: Int64, title: String, desc: String, rating: Int64, length: Int64, teacher: String, category: Int64, price: Int64){
         let course = Course(context: persistentContainer.viewContext)
+        course.id = id
         course.title = title
         course.desc = desc
         course.rating = rating
         course.length = length
         course.teacher = teacher
         course.category = category
+        course.price = price
     }
     
     func getCourses() -> [Course] {
