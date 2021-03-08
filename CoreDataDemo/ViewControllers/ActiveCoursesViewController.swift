@@ -12,7 +12,7 @@ class ActiveCoursesViewController: UIViewController {
     @IBOutlet var navBar: UINavigationBar!
     @IBOutlet var tableView: UITableView!
     
-    let cellIdentifier: String = "CourseTableViewCell"
+    let cellIdentifier: String = "courseCell"
     
     var userBoughtCourses: [Course] = [Course]()
     var userEnrolledCourses: [Course] = [Course]()
@@ -22,8 +22,9 @@ class ActiveCoursesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: cellIdentifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+        view.layer.backgroundColor = UIColor.myBlue.cgColor
+        tableView.backgroundColor = UIColor.myBlue
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -60,19 +61,35 @@ class ActiveCoursesViewController: UIViewController {
 
 extension ActiveCoursesViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 50))
+        returnedView.backgroundColor = UIColor.myBlue
+        
+        let label = UILabel(frame: CGRect(x: 15, y: 0, width: self.view.bounds.size.width, height: 50))
+        
         switch section {
         case 0:
-            return "Bought"
+            label.text = "Bought"
         case 1:
-            return "Registered"
+            label.text = "Registered"
         default:
-            return "Unknown"
+            label.text = "Unknown"
         }
+        
+        label.textColor = UIColor.myWhite
+        returnedView.addSubview(label)
+        
+        return returnedView
     }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,15 +101,28 @@ extension ActiveCoursesViewController: UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProgressionTableViewCell
         
         let course = allCourses[indexPath.section][indexPath.row]
         
         cell.titleLabel.text = course.title
-        cell.descriptionLabel.text = course.desc
-        cell.ratingLabel.text = String(course.rating)
+        cell.teacherLabel.text = course.teacher
+        cell.progressionView.setProgress(course.progression, animated: true)
+        cell.progressionLabel.text = ("\(course.progression * 100) % Complete")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let course = allCourses[indexPath.section][indexPath.row]
+        print(course.progression)
+        if course.progression >= 1.0 {
+            course.progression = 1.0
+        } else {
+            course.progression += 0.1
+        }
+        tableView.reloadData()
+        DataManager.shared.saveContext()
     }
 
 

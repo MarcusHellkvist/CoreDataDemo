@@ -20,8 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //view.layer.backgroundColor = UIColor.myBlue.cgColor
-        
+        //Uncomment to reset database
         //DataManager.shared.deleteAllUsers()
         //DataManager.shared.deleteAllCourses()
         

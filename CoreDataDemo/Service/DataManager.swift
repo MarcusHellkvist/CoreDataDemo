@@ -110,6 +110,7 @@ class DataManager {
         course.teacher = teacher
         course.category = category
         course.price = price
+        course.progression = 0.0
     }
     
     func getCourses() -> [Course] {
