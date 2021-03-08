@@ -25,6 +25,14 @@ class CourseDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //STYLE
+        view.layer.backgroundColor = UIColor.myBlue.cgColor
+        titleLabel.textColor = UIColor.white
+        descriptionLabel.textColor = UIColor.white
+        teacherLabel.textColor = UIColor.white
+        lengthLabel.textColor = UIColor.white
+        priceLabel.textColor = UIColor.white
 
         setupDetailCourse()
 

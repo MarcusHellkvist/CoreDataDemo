@@ -29,11 +29,7 @@ class ProfileViewController: UIViewController {
         view.layer.backgroundColor = UIColor.myBlue.cgColor
         tableView.backgroundColor = UIColor.myBlue
         
-        // OVERALL CHANGES TO THE UINAV BAR (MOVE TO FIRST VIEW)
-        UINavigationBar.appearance().barTintColor = UIColor.myBlue
-        UINavigationBar.appearance().tintColor = UIColor.myBlue
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().isTranslucent = false
+        
         
         tableView.delegate = self
         tableView.dataSource = self

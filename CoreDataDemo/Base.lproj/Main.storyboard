@@ -233,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="1975" y="-124"/>
         </scene>
-        <!--Courses-->
+        <!--Search-->
         <scene sceneID="c4E-wN-ftk">
             <objects>
                 <viewController id="hQm-DJ-VKe" customClass="CoursesViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -321,7 +321,7 @@
                             <constraint firstItem="Dev-0m-CZj" firstAttribute="bottom" secondItem="tKI-L5-4Kl" secondAttribute="bottom" id="bOg-eT-y6g"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Courses" image="book" catalog="system" id="b2U-cR-EyJ"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="book" catalog="system" id="b2U-cR-EyJ"/>
                     <connections>
                         <outlet property="tableView" destination="tKI-L5-4Kl" id="wtW-WT-wJY"/>
                         <segue destination="AQ8-46-Uvq" kind="presentation" identifier="courseDetailSegue" id="CO9-CX-2rJ"/>
@@ -439,7 +439,7 @@
             </objects>
             <point key="canvasLocation" x="1742.0289855072465" y="774.77678571428567"/>
         </scene>
-        <!--Active Courses-->
+        <!--My Courses-->
         <scene sceneID="JGT-YS-w6q">
             <objects>
                 <viewController id="Lrd-mj-URE" customClass="ActiveCoursesViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -450,7 +450,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-o8-9oU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Active Courses" id="lAb-aJ-GJ4"/>
+                                    <navigationItem title="My Courses" id="lAb-aJ-GJ4"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-Cu-Zhy">
@@ -470,7 +470,7 @@
                             <constraint firstItem="1cq-o8-9oU" firstAttribute="trailing" secondItem="Klg-tg-5Ph" secondAttribute="trailing" id="uuH-Cx-5z0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Active Courses" image="wallet.pass" catalog="system" id="bbD-n1-Quw"/>
+                    <tabBarItem key="tabBarItem" title="My Courses" image="wallet.pass" catalog="system" id="bbD-n1-Quw"/>
                     <connections>
                         <outlet property="navBar" destination="1cq-o8-9oU" id="arO-3c-vEr"/>
                         <outlet property="tableView" destination="K4g-Cu-Zhy" id="e1R-0z-TcA"/>
