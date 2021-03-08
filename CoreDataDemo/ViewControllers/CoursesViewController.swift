@@ -105,25 +105,7 @@ class CoursesViewController: UIViewController {
         categories.append(categoryD)
         
     }
-    
-    func getRatingImage(number: Int64) -> UIImage {
-        var ratingImage = UIImage()
-        switch number {
-        case 1:
-            ratingImage = UIImage(named: "star1")!
-        case 2:
-            ratingImage = UIImage(named: "star2")!
-        case 3:
-            ratingImage = UIImage(named: "star3")!
-        case 4:
-            ratingImage = UIImage(named: "star4")!
-        case 5:
-            ratingImage = UIImage(named: "star5")!
-        default:
-            ratingImage = UIImage(named: "star5")!
-        }
-        return ratingImage
-    }
+
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -166,7 +148,7 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = course.title
         cell.teacherLabel.text = course.teacher
-        cell.ratingImage.image = getRatingImage(number: course.rating)
+        cell.ratingImage.image = RatingModel.getRatingImage(number: course.rating)
         cell.priceLabel.text = ("\(course.price) kr")
         
         return cell

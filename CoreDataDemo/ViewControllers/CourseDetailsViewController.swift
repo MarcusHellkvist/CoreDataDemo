@@ -17,22 +17,17 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet var teacherLabel: UILabel!
     @IBOutlet var ratingLabel: UILabel!
     @IBOutlet var lengthLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var ratingImage: UIImageView!
     
     var course: Course?
     weak var delegate: CourseDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupNavBar()
+
         setupDetailCourse()
 
-    }
-    
-    func setupNavBar() {
-        let item = UINavigationItem(title: course?.title ?? "Could not find")
-        item.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
-        navBar.items = [item]
     }
     
     func setupDetailCourse() {
@@ -40,19 +35,21 @@ class CourseDetailsViewController: UIViewController {
         if let course = course {
             titleLabel.text = course.title
             descriptionLabel.text = course.desc
-            lengthLabel.text = String(course.length)
+            lengthLabel.text = ("Estimated time: \(course.length) hours")
             teacherLabel.text = course.teacher
-            ratingLabel.text = String(course.rating)
+            ratingImage.image = RatingModel.getRatingImage(number: course.rating)
+            priceLabel.text = ("\(course.price) kr")
+            
         } else {
             print("course is nil")
         }
         
     }
     
-    @objc func cancelTapped(){
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+
     }
-    
     
     @IBAction func AddToWishlist(_ sender: UIButton) {
         let alert = UIAlertController(title: "Wishlish", message: "Course has been added to your wishlish", preferredStyle: .alert)

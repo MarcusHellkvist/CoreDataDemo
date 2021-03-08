@@ -74,14 +74,20 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! WishlishTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewCourseTableViewCell
         
         let course = userWishlist[indexPath.row]
         
         cell.titleLabel.text = course.title
-        cell.lenghtLabel.text = String(course.length)
+        cell.teacherLabel.text = course.teacher
+        cell.ratingImage.image = RatingModel.getRatingImage(number: course.rating)
+        cell.priceLabel.text = ("\(course.price) kr")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
